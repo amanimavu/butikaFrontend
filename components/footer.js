@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Footer(){
     return(
         <div className={`${styles.footer} row`}>
-            <div className="col-md-2 col-sm-6 d-flex align-items-center justify-content-around">
+            <div className="pt-2 pt-md-3 col-md-3 col-sm-6 d-flex align-items-center justify-content-around">
                 <Link href="https://www.instagram.com/butika_ig/">
                     <a /*target="_blank"*/ className={`${styles.iconContainer} d-flex justify-content-center align-items-center border`}>
                         <Instagram className={`${styles.socialIcons}`}/>

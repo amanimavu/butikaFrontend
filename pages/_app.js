@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps, router}) {
     return(
         <Layout>
             <AnimatePresence>
-                <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={{
+                <motion.div style={{backgroundColor: '#070707'}} className="" key={router.route} initial="pageInitial" animate="pageAnimate" exit="pageExit" variants={{
                     pageInitial:{
                         opacity: 0
                     },
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps, router}) {
                         opacity: 1,
                         transition: {
                             delay: 0.2,
-                            duration: 0.3
+                            duration: 0.3 
                         }
                     },
                     pageExit:{

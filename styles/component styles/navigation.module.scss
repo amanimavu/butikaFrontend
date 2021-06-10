@@ -1,17 +1,88 @@
 .navText{
-    color: #a413bcff;
+    color: #a413bcff !important;
     text-decoration: none;
     font-size: 1.2em;
 }
 
 .navText:hover{
-    color:  #a413bcff;
+    text-decoration: underline;
 }
 
-.bg-dark{
+.navText:focus{
+    text-decoration: underline;
+}
+
+.navBar{
     background-color: black;
 }
 
-#toggler{
-    background-color: purple;
+.menuBtn{
+    width: 50px;
 }
+
+.menuBtn:hover{
+    cursor: pointer;
+}
+
+.strip{
+    width: 45px;
+    height: 2px;
+    margin-top: 8px;
+    background-color: #a413bcff;
+    border-radius: 20px;
+    transition: width 3s;
+}
+
+
+.close .one{
+    transform: translate(0, 12px) rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.close .two{
+    background-color: transparent;
+    transform: translateX(-55px);
+    transition: transform 0.3s ease;
+}
+
+.close .three{
+    transform: translate(0, -8px) rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+.logo{
+    background-color: #070707;
+    border: solid;
+    border-color: black;
+}
+
+@media screen and (min-width: 992px){
+    .menuBtn{
+        visibility: hidden;
+    }
+
+    .navContClose{
+        overflow-y: visible;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .navContClose{
+        height: 0;
+        overflow-y: hidden;
+        transition: height 1s ease;
+    }
+    
+    .navContOpen{
+        height: 175px;
+        padding-top: 1em;
+        transition: height 1s ease;
+        overflow-y: hidden;
+    }
+}
+
+
+
+
+
+
