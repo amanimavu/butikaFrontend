@@ -38,7 +38,7 @@ export default function Navigation(){
     return(
         <div className={`row ${styles.navBar} m-0`}>
             <Logo className={`${styles.logo} col-4 col-lg-1 mx-lg-5 p-md-0`}/>
-            <div className="col-5 col-md-6 d-lg-none">&nbsp;</div>
+            <div className="col-4 col-md-6 d-lg-none">&nbsp;</div>
             <div className="col-12 order-12 col-lg-8">
                 <div className={`d-lg-flex`}>
                     <Link href="/"><Nav.Link href="/" className={`${styles.navText} mx-2`} onClick={linkClicked} as="a">Home</Nav.Link></Link>
@@ -46,7 +46,7 @@ export default function Navigation(){
                     <Link href="/about"><Nav.Link href="/about" className={`${styles.navText} mx-2`} onClick={linkClicked} as="a">About Us</Nav.Link></Link>
                 </div>
             </div>
-            <div className="pl-md-5 pt-md-2 col-auto">
+            <div className="pl-md-5 pt-md-2 col">
                 <div onClick={menuBtnclicked} className={`${styles.menuBtn} align-self-end d-xs-flex flex-column align-items-center`}>
                     <div className={`${styles.strip} ${styles.one}`}></div>
                     <div className={`${styles.strip} ${styles.two}`}></div>

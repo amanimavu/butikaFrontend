@@ -1,12 +1,15 @@
 import { useState} from 'react';
 import Image from 'next/image';
-import styles from '../../styles/component styles/id.module.scss'
+import styles from '../../styles/component styles/id.module.scss';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 
 export default function Shoe({shoeData}){
     let Color;
     const [Quantity, setQuantity] = useState('');
     const [Size, setSize] = useState('');
     const [Location, setLocation] = useState('')
+    const [AlertOn, setAlertOn] = useState(false);
     const handleSizeInput = (e) => {
         setSize(e.target.value)
     }
@@ -19,6 +22,7 @@ export default function Shoe({shoeData}){
     const handleColorInput = (e) => {
         Color = e.target.value
     }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = {shoeQuantity: Quantity, shoeSize: Size, shoeColor: Color}
@@ -30,9 +34,15 @@ export default function Shoe({shoeData}){
             },
             body: JSON.stringify(data)
         })
+        setAlertOn(!AlertOn);
     }
+
     return(
         <div className="container pt-4">
+            <Alert className={styles.alert} show={AlertOn} variant="success">
+                <p>Your order has been submitted</p>
+                <Button onClick={()=>setAlertOn(!AlertOn)}>Ok</Button>
+            </Alert>
             <div className="row">
                 <div className="col-3">&nbsp;</div>
                 <div className="col">
@@ -52,19 +62,19 @@ export default function Shoe({shoeData}){
                     <div className="form-group row">
                         <label htmlFor="imputShoeType" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Quantity</label>
                         <div className="col-sm-9 col-md-8">
-                            <input value={Quantity} onChange={handleQuantityInput} type="shoeQuantity" className="form-controls" id="inputShoeQuantity"/>
+                            <input required="required" value={Quantity} onChange={handleQuantityInput} type="shoeQuantity" className="form-controls" id="inputShoeQuantity"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="imputShoeSize" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Size</label>
                         <div className="col-sm-9 col-md-8">
-                            <input value={Size} onChange={handleSizeInput} type="shoeSize" className="form-controls" id="inputShoeSize"/>
+                            <input required="required" value={Size} onChange={handleSizeInput} type="shoeSize" className="form-controls" id="inputShoeSize"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="imputCustomerLocation" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Location</label>
                         <div className="col-sm-9 col-md-8">
-                            <input value={Location} onChange={handleLocationInput} type="customerLocation" className="form-controls" id="inputCustomerLocation"/>
+                            <input required="required" value={Location} onChange={handleLocationInput} type="customerLocation" className="form-controls" id="inputCustomerLocation"/>
                         </div>
                     </div>
                     <div className="form-group row">

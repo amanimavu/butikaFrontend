@@ -1,15 +1,25 @@
 .navText{
-    color: #a413bcff !important;
+    color: #c078f6!important;
     text-decoration: none;
     font-size: 1.2em;
 }
 
 .navText:hover{
-    text-decoration: underline;
+    animation: wiggle 0.5s;
+}
+
+@keyframes wiggle{
+    // 0%{transform: rotate(0deg);}
+    // 33%{transform: rotate(-10deg);}
+    // 66%{transform: rotate(10deg);}
+    // 100%{transform: rotate(0deg);}
+    0%{transform: translateY(-5px);}
+    100%{transform: translateY(0px);}
 }
 
 .navText:focus{
-    text-decoration: underline;
+    border-bottom: solid;
+    border-color: #c078f6;
 }
 
 .navBar{
@@ -28,7 +38,7 @@
     width: 45px;
     height: 2px;
     margin-top: 8px;
-    background-color: #a413bcff;
+    background-color: #c078f6;
     border-radius: 20px;
     transition: width 3s;
 }
