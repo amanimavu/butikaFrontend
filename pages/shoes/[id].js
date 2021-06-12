@@ -8,8 +8,9 @@ export default function Shoe({shoeData}){
     let Color;
     const [Quantity, setQuantity] = useState('');
     const [Size, setSize] = useState('');
-    const [Location, setLocation] = useState('')
-    const [AlertOn, setAlertOn] = useState(false);
+    const [Location, setLocation] = useState('');
+    const [Contact, setContact] = useState('');
+    //const [AlertOn, setAlertOn] = useState(false);
     const handleSizeInput = (e) => {
         setSize(e.target.value)
     }
@@ -19,13 +20,16 @@ export default function Shoe({shoeData}){
     const handleLocationInput = (e) => {
         setLocation(e.target.value)
     }
+    const handleContactInput = (e) => {
+        setContact(e.target.value)
+    }
     const handleColorInput = (e) => {
         Color = e.target.value
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {shoeQuantity: Quantity, shoeSize: Size, shoeColor: Color}
+        const data = {shoeQuantity: Quantity, shoeSize: Size, shoeColor: Color, customerLocation: Location, customerContact: Contact}
         const url = 'http://localhost:1337/responses'
         fetch(url, {
             method: 'POST',
@@ -34,15 +38,16 @@ export default function Shoe({shoeData}){
             },
             body: JSON.stringify(data)
         })
-        setAlertOn(!AlertOn);
+        alert("Your order has been submitted");
+        //setAlertOn(!AlertOn);
     }
 
     return(
         <div className="container pt-4">
-            <Alert className={styles.alert} show={AlertOn} variant="success">
+            {/* <Alert className={styles.alert} show={AlertOn} variant="success">
                 <p>Your order has been submitted</p>
                 <Button onClick={()=>setAlertOn(!AlertOn)}>Ok</Button>
-            </Alert>
+            </Alert> */}
             <div className="row">
                 <div className="col-3">&nbsp;</div>
                 <div className="col">
@@ -75,6 +80,12 @@ export default function Shoe({shoeData}){
                         <label htmlFor="imputCustomerLocation" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Location</label>
                         <div className="col-sm-9 col-md-8">
                             <input required="required" value={Location} onChange={handleLocationInput} type="customerLocation" className="form-controls" id="inputCustomerLocation"/>
+                        </div>
+                    </div>
+                    <div className="form-group row">
+                        <label htmlFor="imputShoeSize" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Tel number</label>
+                        <div className="col-sm-9 col-md-8">
+                            <input required="required" value={Contact} onChange={handleContactInput} type="customerContact" className="form-controls" id="inputContact"/>
                         </div>
                     </div>
                     <div className="form-group row">
