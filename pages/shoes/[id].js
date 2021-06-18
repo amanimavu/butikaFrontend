@@ -30,7 +30,8 @@ export default function Shoe({shoeData}){
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = {shoeQuantity: Quantity, shoeSize: Size, shoeColor: Color, customerLocation: Location, customerContact: Contact}
-        const url = 'http://localhost:1337/responses'
+        //const url = 'http://localhost:1337/responses'
+        const url = 'https://afternoon-fjord-70820.herokuapp.com/responses'
         fetch(url, {
             method: 'POST',
             headers:{
@@ -53,7 +54,8 @@ export default function Shoe({shoeData}){
                 <div className={`col-auto ${styles.modifiedColAuto}`}>
                     <Image
                         className="border"
-                        src={`http://localhost:1337${shoeData.image[0].url}`}
+                        //src={`http://localhost:1337${shoeData.image[0].url}`}
+                        src={`https://afternoon-fjord-70820.herokuapp.com${shoeData.image[0].url}`}
                         alt="shoe"
                         height={300}
                         width={300}
@@ -118,7 +120,8 @@ export default function Shoe({shoeData}){
 }
 
 export async function getStaticPaths(){
-    const res = await fetch('http://localhost:1337/shoes')
+    //const res = await fetch('http://localhost:1337/shoes')
+    const res = await fetch('https://afternoon-fjord-70820.herokuapp.com/shoes')
     const data = await res.json()
 
     const paths = data.map(item => ({
@@ -130,7 +133,8 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
     let id = params.id
-    const res = await fetch(`http://localhost:1337/shoes/${id}`)
+    //const res = await fetch(`http://localhost:1337/shoes/${id}`)
+    const res = await fetch(`https://afternoon-fjord-70820.herokuapp.com/shoes/${id}`)
     const data = await res.json()
 
     return{
