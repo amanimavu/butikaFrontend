@@ -12,6 +12,7 @@ export default function Gallery(props){
                 <div className={`${Styles.cardTweak} card bg-transparent text-white shadow mb-4`}>
                     <div className={Styles.inner}>
                         <Image
+                            //src={`https://afternoon-fjord-70820.herokuapp.com${item.image[0].url}`}
                             src={`http://localhost:1337${item.image[0].url}`}
                             className={`card-img-top border ${Styles.img}`}
                             layout="responsive"

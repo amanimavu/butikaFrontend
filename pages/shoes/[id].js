@@ -49,8 +49,8 @@ export default function Shoe({shoeData}){
                 <Button onClick={()=>setAlertOn(!AlertOn)}>Ok</Button>
             </Alert> */}
             <div className="row">
-                <div className="col-3">&nbsp;</div>
-                <div className="col">
+                <div className="col">&nbsp;</div>
+                <div className={`col-auto ${styles.modifiedColAuto}`}>
                     <Image
                         className="border"
                         src={`http://localhost:1337${shoeData.image[0].url}`}
@@ -59,11 +59,11 @@ export default function Shoe({shoeData}){
                         width={300}
                     />
                 </div>
-                <div className="col-3">&nbsp;</div>
+                <div className="col">&nbsp;</div>
             </div>
             <form className="row g-3 p-4" onSubmit={handleSubmit}>
-                <div className="col col-md-2">&nbsp;</div>
-                <div className="col">
+                <div className="col">&nbsp;</div>
+                <div className={`col-auto ${styles.modifiedColAuto}`}>
                     <div className="form-group row">
                         <label htmlFor="imputShoeType" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Quantity</label>
                         <div className="col-sm-9 col-md-8">
@@ -91,19 +91,27 @@ export default function Shoe({shoeData}){
                     <div className="form-group row">
                         <label className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Color</label>
                         <div className="col-sm-9 col-md-8">
-                            <div className="form-ceck">
+                            {
+                                shoeData.colors.map((color, i)=> {
+                                    return <div key={`colorOption${i}`} className="form-ceck">
+                                        <input className="form-check-input" onClick={handleColorInput} value="red" type="radio" id="inputShoeColor1" name="inputShoeColor" />
+                                        <label className={`${styles.radioLabel} form-check-label`} htmlFor="inputShoeColor1" >{color}</label>
+                                    </div>
+                                }) 
+                            }
+                            {/* <div className="form-ceck">
                                 <input className="form-check-input" onClick={handleColorInput} value="red" type="radio" id="inputShoeColor1" name="inputShoeColor" />
                                 <label className={`${styles.radioLabel} form-check-label`} htmlFor="inputShoeColor1" >Red</label>
                             </div>
                             <div className="form-ceck">
                                 <input className="form-check-input" onClick={handleColorInput} type="radio" value="blue" id="inputShoeColor2" name="inputShoeColor" />
                                 <label className={`${styles.radioLabel} form-check-label`} htmlFor="inputShoeColor2" >Blue</label>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <button type="submit" className={`btn ${styles.submitBtn}`}>Submit</button>
                 </div>
-                <div className="col col-md-2">&nbsp;</div>
+                <div className="col">&nbsp;</div>
             </form>
         </div>
     )

@@ -1,5 +1,6 @@
 module.exports = {
     images: {
+        //domains: ['afternoon-fjord-70820.herokuapp.com'],
         domains: ['localhost'],
       },
     webpack(config){

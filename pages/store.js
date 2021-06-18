@@ -10,6 +10,7 @@ export default function Store({data = []}){
 }
 
 export async function getStaticProps(){
+    //const res = await fetch('https://afternoon-fjord-70820.herokuapp.com/shoes')
     const res = await fetch('http://localhost:1337/shoes')
     const data = await res.json()
 
