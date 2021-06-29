@@ -49,9 +49,9 @@ export default function Shoe({shoeData}){
                 <p>Your order has been submitted</p>
                 <Button onClick={()=>setAlertOn(!AlertOn)}>Ok</Button>
             </Alert> */}
-            <div className="row">
+            <div className={`row ${styles.marginLeft}`}>
                 <div className="col">&nbsp;</div>
-                <div className={`col-auto ${styles.modifiedColAuto}`}>
+                <div className={`col-auto`}>
                     <Image
                         className="border"
                         //src={`http://localhost:1337${shoeData.image[0].url}`}
@@ -63,9 +63,9 @@ export default function Shoe({shoeData}){
                 </div>
                 <div className="col">&nbsp;</div>
             </div>
-            <form className="row g-3 p-4" onSubmit={handleSubmit}>
+            <form className="row p-4" onSubmit={handleSubmit}>
                 <div className="col">&nbsp;</div>
-                <div className={`col-auto g-0`}>
+                <div className={`col-auto`}>
                     <div className="form-group row">
                         <label htmlFor="imputShoeType" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Quantity</label>
                         <div className="col-sm-9 col-md-8">
