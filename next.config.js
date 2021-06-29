@@ -1,7 +1,7 @@
 module.exports = {
     images: {
-        //domains: ['afternoon-fjord-70820.herokuapp.com'],
-        domains: ['localhost'],
+        domains: ['butika-backend.herokuapp.com'],
+        //domains: ['localhost'],
       },
     webpack(config){
         config.module.rules.push({
