@@ -65,7 +65,7 @@ export default function Shoe({shoeData}){
             </div>
             <form className="row g-3 p-4" onSubmit={handleSubmit}>
                 <div className="col">&nbsp;</div>
-                <div className={`col-auto ${styles.modifiedColAuto}`}>
+                <div className={`col-auto g-0 ${styles.modifiedColAuto}`}>
                     <div className="form-group row">
                         <label htmlFor="imputShoeType" className={`${styles.label} col-sm-3 col-md-4 col-form-label`}>Quantity</label>
                         <div className="col-sm-9 col-md-8">
