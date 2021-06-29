@@ -1,6 +1,6 @@
 module.exports = {
     images: {
-        domains: ['butika-backend.herokuapp.com'],
+        domains: ['res.cloudinary.com'],
         //domains: ['localhost'],
       },
     webpack(config){
