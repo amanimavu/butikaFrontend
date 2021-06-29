@@ -55,7 +55,7 @@ export default function Shoe({shoeData}){
                     <Image
                         className="border"
                         //src={`http://localhost:1337${shoeData.image[0].url}`}
-                        src={`https://butika-backend.herokuapp.com${shoeData.image[0].url}`}
+                        src={`${shoeData.image[0].url}`}
                         alt="shoe"
                         height={300}
                         width={300}
